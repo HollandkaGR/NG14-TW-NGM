@@ -11,7 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 export class AppComponent {
 	title = 'Material+TW skeleton';
 
-	mode: themeMode = 'light';
+	mode: themeMode = 'dark';
 	purpleSkin = false;
 
 	constructor(@Inject(DOCUMENT) private document: Document, ts: Title) {

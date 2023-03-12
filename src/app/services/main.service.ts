@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable()
-export abstract class MainService implements OnInit {
+export class MainService implements OnInit {
 
   constructor() { }
 
@@ -9,6 +9,8 @@ export abstract class MainService implements OnInit {
     console.log('Main service init')
   }
 
-  public abstract log(message: String): void
+  public log(message: String): void {
+    console.log('Log: ', message)
+  }
 
 }

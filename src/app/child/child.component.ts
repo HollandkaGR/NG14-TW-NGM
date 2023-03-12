@@ -15,8 +15,8 @@ export class ChildComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  log() {
-    this.service.log('')
+  onSubmitClick() {
+    this.service.log(this.message)
   }
 
 }

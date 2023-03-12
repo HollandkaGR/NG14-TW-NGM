@@ -8,7 +8,7 @@ export class ServiceOneService extends MainService {
     super()
   }
 
-  public log(message: String): void {
+  public override log(message: String): void {
     console.log('Service One logging: ', message)
   }
 
