@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CaseService } from './services/case.service';
 
 @Component({
 	selector: 'app-root',
@@ -11,11 +12,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 export class AppComponent {
 	title = 'Material+TW skeleton';
 
-	mode: themeMode = 'light';
+	mode: themeMode = 'dark';
 	purpleSkin = false;
 
-	constructor(@Inject(DOCUMENT) private document: Document, ts: Title) {
+	showComponents = false
+
+	constructor(@Inject(DOCUMENT) private document: Document, ts: Title, private caseSerice: CaseService) {
 		ts.setTitle(this.title);
+	}
+
+	toggleShowComponents() {
+		this.showComponents = !this.showComponents
+	}
+
+	logWithService() {
+		this.caseSerice.log('From app component')
 	}
 
 	toggleDarkMode() {

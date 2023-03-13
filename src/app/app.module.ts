@@ -7,9 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { ParentOneComponent } from './parent-one/parent-one.component';
+import { ParentTwoComponent } from './parent-two/parent-two.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, ParentOneComponent, ParentTwoComponent, ChildComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
