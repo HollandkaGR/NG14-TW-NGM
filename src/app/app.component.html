@@ -1,24 +1,20 @@
 <mat-slide-toggle
-    color="primary"
-    class="absolute left-[calc(100%-120px)] top-3 text-black dark:text-primary-500"
-    (click)="toggleDarkMode()"
-    >{{ mode | uppercase }}</mat-slide-toggle
+	color="primary"
+	class="absolute left-[calc(100%-120px)] top-3 text-black dark:text-primary-500"
+	(click)="toggleDarkMode()"
+	>{{ mode | uppercase }}</mat-slide-toggle
 >
-<div class="flex gap-3 pt-10 justify-center">
-    <button
-        (click)="toggleShowComponents()"
-        class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">
-        {{ showComponents ? 'Hide components': 'Show components'}}
-    </button>
-    <button
-        (click)="logWithService()"
-        class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">
-        Log
-    </button>
-</div>
-<div
-    class="flex gap-2 justify-evenly text-black dark:text-white"
-    *ngIf="showComponents">
-    <app-parent-one></app-parent-one>
-    <app-parent-two></app-parent-two>
-</div>
+<mat-slide-toggle
+	color="primary"
+	class="absolute left-[calc(100%-120px)] top-9 text-black dark:text-primary-500"
+	[(ngModel)]="purpleSkin"
+	(change)="togglePurpleSkin()"
+	>{{ 'purple' | uppercase }}</mat-slide-toggle
+>
+
+<button mat-flat-button class="!bg-red-600 dark:bg-white !text-white dark:text-red-400">
+	Material Button
+</button>
+<button class="px-4 py-2 rounded bg-primary-800 dark:bg-primary-300">Tailwind Button</button>
+<h1 class="text-3xl font-bold underline text-primary-700 dark:text-primary-300">Hello world!</h1>
+<h1 class="text-primary-600 dark:primary-300">Tailwind Heading One</h1>
