@@ -10,13 +10,15 @@ export class ChildComponent implements OnInit {
 
   public message!: string 
 
-  constructor(private service: MainService) { }
+  constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
+    console.log(typeof this.mainService);
+    
   }
 
   onSubmitClick() {
-    this.service.log(this.message)
+    this.mainService.log(this.message)
   }
 
 }

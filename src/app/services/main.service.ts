@@ -1,11 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable()
-export class MainService implements OnInit {
+export abstract class MainService {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
     console.log('Main service init')
   }
 

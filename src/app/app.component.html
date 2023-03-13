@@ -4,7 +4,21 @@
     (click)="toggleDarkMode()"
     >{{ mode | uppercase }}</mat-slide-toggle
 >
-<div class="flex gap-2 justify-evenly pt-10 text-black dark:text-white">
+<div class="flex gap-3 pt-10 justify-center">
+    <button
+        (click)="toggleShowComponents()"
+        class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">
+        {{ showComponents ? 'Hide components': 'Show components'}}
+    </button>
+    <button
+        (click)="logWithService()"
+        class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">
+        Log
+    </button>
+</div>
+<div
+    class="flex gap-2 justify-evenly text-black dark:text-white"
+    *ngIf="showComponents">
     <app-parent-one></app-parent-one>
     <app-parent-two></app-parent-two>
 </div>
