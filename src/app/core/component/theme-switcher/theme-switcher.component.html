@@ -1,0 +1,10 @@
+<ng-container class="!transition-none">
+    <mat-slide-toggle
+        color="white"
+        class="text-slate-800 dark:text-white transition-colors duration-500"
+        (change)="toggleDarkMode($event)"
+        labelPosition="before"
+        [checked]="isDarkMode$ | async"
+        ><mat-icon class="text-xl">dark_mode</mat-icon></mat-slide-toggle
+    >
+</ng-container>

@@ -1,0 +1,17 @@
+<section class="relative">
+    <nav
+        @insertTrigger
+        class="!bg-white dark:!bg-slate-800 transition-colors duration-300 !text-black dark:!text-white py-2 flex justify-center gap-3 flex-row border-t border-b border-solid border-black/30 absolute top-0 left-0 right-0 h-12 overflow-hidden">
+        <a
+            *ngFor="let route of routes"
+            [routerLink]="route.routeObject.path"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="w-20 px-2 py-1 text-center transition-colors duration-150 border-2 border-black border-solid dark:border-white hover:bg-slate-600 hover:text-white"
+            >{{ route.displayName }}</a
+        >
+    </nav>
+    <div class="py-2 px-3 pt-16 h-[calc(100vh-64px)]">
+        <router-outlet></router-outlet>
+    </div>
+</section>

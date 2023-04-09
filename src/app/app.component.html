@@ -1,20 +1,6 @@
-<mat-slide-toggle
-	color="primary"
-	class="absolute left-[calc(100%-120px)] top-3 text-black dark:text-primary-500"
-	(click)="toggleDarkMode()"
-	>{{ mode | uppercase }}</mat-slide-toggle
->
-<mat-slide-toggle
-	color="primary"
-	class="absolute left-[calc(100%-120px)] top-9 text-black dark:text-primary-500"
-	[(ngModel)]="purpleSkin"
-	(change)="togglePurpleSkin()"
-	>{{ 'purple' | uppercase }}</mat-slide-toggle
->
-
-<button mat-flat-button class="!bg-red-600 dark:bg-white !text-white dark:text-red-400">
-	Material Button
-</button>
-<button class="px-4 py-2 rounded bg-primary-800 dark:bg-primary-300">Tailwind Button</button>
-<h1 class="text-3xl font-bold underline text-primary-700 dark:text-primary-300">Hello world!</h1>
-<h1 class="text-primary-600 dark:primary-300">Tailwind Heading One</h1>
+<div class="relative flex flex-col items-stretch h-full text-black dark:text-white">
+    <app-nav class="fixed top-0 left-0 right-0"></app-nav>
+    <section class="mt-16 h-[calc(100vh-64px)]">
+        <router-outlet></router-outlet>
+    </section>
+</div>

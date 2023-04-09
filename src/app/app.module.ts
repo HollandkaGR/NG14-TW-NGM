@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExamplesModule } from '@app/pages/examples/examples.module';
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './core/routes/app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		MatButtonModule,
-		MatSlideToggleModule,
-		FormsModule,
-	],
-	providers: [Title],
-	bootstrap: [AppComponent],
+    declarations: [AppComponent, HomeComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule,
+        CoreModule,
+        ExamplesModule,
+    ],
+    providers: [Title],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

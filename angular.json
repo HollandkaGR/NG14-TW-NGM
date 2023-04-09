@@ -7,10 +7,16 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "changeDetection": "OnPush",
+          "style": "sass",
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:service": {
+          "flat": true,
+          "skipTests": true
         }
       },
       "root": "",
