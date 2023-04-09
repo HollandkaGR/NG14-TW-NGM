@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FetchComponent } from '@app/pages/examples/fetch/fetch.component';
 import { MainComponent } from '@app/pages/examples/main/main.component';
-import { ServiceExampleComponent } from '@app/pages/examples/service-example/service-example.component';
 import { WelcomeComponent } from '@app/pages/examples/welcome/welcome.component';
 import { SandboxRoute, convertChildRoutes } from '@core/util/routHandler';
 
@@ -21,7 +20,10 @@ export const exampleRoutes: SandboxRoute[] = [
     {
         routeObject: {
             path: 'services',
-            component: ServiceExampleComponent,
+            loadChildren: () =>
+                import('@app/pages/examples/service-example/service-example.module').then(
+                    (m) => m.ServiceExampleModule
+                ),
         },
         displayName: 'Services',
         inNav: true,

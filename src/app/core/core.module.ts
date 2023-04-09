@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { NotFoundComponent } from '@core/component/not-found/not-found.component';
 import { AppRoutingModule } from '@core/routes/app-routing.module';
 import { NavComponent } from 'src/app/core/component/nav/nav.component';
 import { ThemeSwitcherComponent } from 'src/app/core/component/theme-switcher/theme-switcher.component';
 import { EnvPipe } from 'src/app/core/pipe/env.pipe';
 import { MaterialModule } from 'src/app/material/material.module';
 
-const CORE_COMPONENTS_TO_EXPORT = [NavComponent];
+const CORE_COMPONENTS_TO_EXPORT = [NavComponent, NotFoundComponent];
 
 @NgModule({
     declarations: [ThemeSwitcherComponent, ...CORE_COMPONENTS_TO_EXPORT, EnvPipe],

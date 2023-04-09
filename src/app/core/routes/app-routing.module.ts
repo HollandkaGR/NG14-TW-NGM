@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '@app/pages/home/home.component';
-import { SandboxRoute, convertMainRoutes } from '@core/util/routHandler';
+import { NotFoundComponent } from '@core/component/not-found/not-found.component';
+import { SandboxRoute, convertMainRoutes, defaultRoute } from '@core/util/routHandler';
 
 export enum MainRoute {
     WELCOME,
     EXAMPLES,
+    NOT_FOUND,
 }
 
 export const mainRoutes: Map<MainRoute, SandboxRoute> = new Map([
@@ -38,11 +40,21 @@ export const mainRoutes: Map<MainRoute, SandboxRoute> = new Map([
     ],
 ]);
 
+const NOT_FOUND: SandboxRoute = {
+    routeObject: {
+        path: 'not-found',
+        component: NotFoundComponent,
+    },
+    displayName: '404',
+    inNav: false,
+};
+
 const routes: Routes = [
     {
         path: '',
-        children: [...convertMainRoutes(mainRoutes)],
+        children: [...convertMainRoutes(mainRoutes), NOT_FOUND.routeObject],
     },
+    defaultRoute(NOT_FOUND),
 ];
 
 @NgModule({

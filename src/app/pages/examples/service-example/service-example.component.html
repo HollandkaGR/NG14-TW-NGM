@@ -1,1 +1,12 @@
-<p>service-example works!</p>
+<section class="flex justify-between gap-3">
+    <app-parent-one></app-parent-one>
+    <div class="flex flex-col gap-2">
+        <button
+            mat-button
+            color="primary"
+            (click)="increaseCounter()">
+            Increase Counter
+        </button>
+    </div>
+    <app-parent-two></app-parent-two>
+</section>
