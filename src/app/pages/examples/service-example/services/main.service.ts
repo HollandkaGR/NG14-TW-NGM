@@ -14,12 +14,10 @@ export abstract class MainService {
     abstract get serviceName(): string;
 
     public log(message: String): void {
-        console.log('Log: ', message);
+        console.log(this.serviceName + ' log: ', message);
     }
 
     increaseCounter() {
-        let counter: number = this._counter.getValue() !== null ? this._counter.getValue() : 0;
-        counter++;
-        this._counter.next(counter);
+        this._counter.next(this._counter.getValue() + 1);
     }
 }

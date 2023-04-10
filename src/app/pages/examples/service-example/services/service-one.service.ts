@@ -16,8 +16,4 @@ export class ServiceOneService extends MainService {
     ngOnDestroy(): void {
         console.log('ServiceOne destroyed');
     }
-
-    public override log(message: String): void {
-        console.log('Service One logging: ', message);
-    }
 }

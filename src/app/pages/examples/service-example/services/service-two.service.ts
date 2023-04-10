@@ -16,8 +16,4 @@ export class ServiceTwoService extends MainService implements OnDestroy {
     ngOnDestroy(): void {
         console.log('ServiceTwo destroyed');
     }
-
-    public override log(message: String): void {
-        console.log('Service Two logging: ', message);
-    }
 }
