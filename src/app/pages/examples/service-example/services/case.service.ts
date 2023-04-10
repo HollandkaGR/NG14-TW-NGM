@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class CaseService {
     private childService!: MainService;
 
