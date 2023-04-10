@@ -11,6 +11,8 @@ export abstract class MainService {
         caseService.service = this;
     }
 
+    abstract get serviceName(): string;
+
     public log(message: String): void {
         console.log('Log: ', message);
     }

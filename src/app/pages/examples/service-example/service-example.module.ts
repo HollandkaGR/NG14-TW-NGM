@@ -7,7 +7,6 @@ import { ChildComponent } from '@app/pages/examples/service-example/child/child.
 import { ParentOneComponent } from '@app/pages/examples/service-example/parent-one/parent-one.component';
 import { ParentTwoComponent } from '@app/pages/examples/service-example/parent-two/parent-two.component';
 import { ServiceExampleComponent } from '@app/pages/examples/service-example/service-example.component';
-import { ServiceTwoService } from '@app/pages/examples/service-example/services/service-two.service';
 import { CoreModule } from '@core/core.module';
 import { StateOverviewComponent } from './state-overview/state-overview.component';
 
@@ -32,6 +31,6 @@ import { StateOverviewComponent } from './state-overview/state-overview.componen
         ]),
     ],
     exports: [RouterModule],
-    providers: [ServiceTwoService],
+    // providers: [ServiceTwoService],
 })
 export class ServiceExampleModule {}

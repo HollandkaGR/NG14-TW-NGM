@@ -13,7 +13,7 @@ import { MainComponent } from './main/main.component';
     exports: [RouterModule],
     providers: [
         CaseService,
-        // , ServiceOneService, ServiceTwoService
+        // ServiceOneService, ServiceTwoService
     ],
 })
 export class ExamplesModule {}

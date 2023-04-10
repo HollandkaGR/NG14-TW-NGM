@@ -4,6 +4,10 @@ import { MainService } from './main.service';
 
 @Injectable()
 export class ServiceTwoService extends MainService implements OnDestroy {
+    get serviceName() {
+        return 'Service two';
+    }
+
     constructor(caseService: CaseService) {
         console.log('ServiceTwo initialize');
         super(caseService);

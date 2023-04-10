@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { MainService } from './main.service';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class CaseService {
     private childService!: MainService;
 
     constructor() {}
 
     set service(cService: MainService) {
-        this.childService = cService;
+        if (!this.childService) this.childService = cService;
     }
 
     increaseCounter(): void {

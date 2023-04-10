@@ -12,7 +12,7 @@ import { ServiceTwoService } from '@app/pages/examples/service-example/services/
 export class StateOverviewComponent implements OnInit {
     counter$;
 
-    constructor(private mainService: MainService) {
+    constructor(public mainService: MainService) {
         this.counter$ = this.mainService.counter$;
     }
 

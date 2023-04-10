@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MainService } from '../services/main.service';
-import { ServiceOneService } from '../services/service-one.service';
 
 @Component({
     selector: 'app-child',
@@ -14,12 +13,8 @@ export class ChildComponent {
 
     counter$: Observable<number>;
 
-    constructor(private mainService: MainService) {
+    constructor(public mainService: MainService) {
         this.counter$ = mainService.counter$;
-    }
-
-    get isServiceOne() {
-        return this.mainService instanceof ServiceOneService;
     }
 
     onSubmitClick() {
