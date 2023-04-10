@@ -7,14 +7,23 @@ import { ChildComponent } from '@app/pages/examples/service-example/child/child.
 import { ParentOneComponent } from '@app/pages/examples/service-example/parent-one/parent-one.component';
 import { ParentTwoComponent } from '@app/pages/examples/service-example/parent-two/parent-two.component';
 import { ServiceExampleComponent } from '@app/pages/examples/service-example/service-example.component';
-import { CaseService } from '@app/pages/examples/service-example/services/case.service';
+import { ServiceTwoService } from '@app/pages/examples/service-example/services/service-two.service';
+import { CoreModule } from '@core/core.module';
+import { StateOverviewComponent } from './state-overview/state-overview.component';
 
 @NgModule({
-    declarations: [ServiceExampleComponent, ParentOneComponent, ParentTwoComponent, ChildComponent],
+    declarations: [
+        ServiceExampleComponent,
+        ParentOneComponent,
+        ParentTwoComponent,
+        ChildComponent,
+        StateOverviewComponent,
+    ],
     imports: [
         CommonModule,
         FormsModule,
         MaterialModule,
+        CoreModule,
         RouterModule.forChild([
             {
                 path: '',
@@ -23,6 +32,6 @@ import { CaseService } from '@app/pages/examples/service-example/services/case.s
         ]),
     ],
     exports: [RouterModule],
-    providers: [CaseService],
+    providers: [ServiceTwoService],
 })
 export class ServiceExampleModule {}

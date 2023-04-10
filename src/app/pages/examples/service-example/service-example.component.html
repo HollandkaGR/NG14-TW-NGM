@@ -4,9 +4,11 @@
         <button
             mat-button
             color="primary"
-            (click)="increaseCounter()">
-            Increase Counter
+            clickDebounce
+            (debounceClick)="increaseCounter()">
+            Call Case Service
         </button>
+        <!-- <app-state-overview></app-state-overview> -->
     </div>
     <app-parent-two></app-parent-two>
 </section>
