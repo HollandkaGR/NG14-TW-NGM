@@ -7,7 +7,7 @@ import { ServiceTwoService } from '@app/pages/examples/service-example/services/
     templateUrl: './state-overview.component.html',
     styleUrls: ['./state-overview.component.sass'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [{ provide: MainService, useExisting: ServiceTwoService }],
+    providers: [{ provide: MainService, useClass: ServiceTwoService }],
 })
 export class StateOverviewComponent implements OnInit {
     counter$;

@@ -20,4 +20,8 @@ export abstract class MainService {
     increaseCounter() {
         this._counter.next(this._counter.getValue() + 1);
     }
+
+    get counterValue() {
+        return this._counter.getValue();
+    }
 }

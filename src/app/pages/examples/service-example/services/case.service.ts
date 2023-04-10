@@ -1,18 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { MainService } from './main.service';
 
 @Injectable()
-export class CaseService {
+export class CaseService implements OnDestroy {
     private childService!: MainService;
 
-    constructor() {}
+    constructor() {
+        console.log('CaseService initialize');
+    }
+
+    ngOnDestroy(): void {
+        console.log('CaseService destroyed');
+    }
 
     set service(cService: MainService) {
         if (!this.childService) this.childService = cService;
     }
 
     increaseCounter(): void {
-        if (!this.childService) return;
         this.childService.increaseCounter();
+        console.log('Increased counter: ', this.childService.counterValue);
+    }
+
+    get currentCounter() {
+        return this.childService.counterValue;
     }
 }
