@@ -57,8 +57,6 @@ export class ProgressbarComponent {
             .pipe(
                 scan(
                     (acc: SaveScanState, value: SaveRequest) => {
-                        // Az egyes streamek elkészültekor frissítsd a progressbart
-                        console.log(`A ${value.saveId} stream elkészült, a generált ID: ${value.generatedId}`);
                         return {
                             done: acc.done + 1,
                             lastSaveId: value.saveId,
@@ -77,6 +75,7 @@ export class ProgressbarComponent {
     }
 
     private stepCompleted(state: SaveScanState): void {
+        console.log(`A ${state.lastSaveId} stream elkészült, a generált ID: ${state.lastGeneratedId}`);
         this.savingStatus$.next({
             ...this.savingStatus$.value,
             done: state.done,
