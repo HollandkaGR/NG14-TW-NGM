@@ -1,0 +1,23 @@
+<div *ngIf="savingStatus$ | async as savingStatus">
+    <div
+        *ngIf="savingStatus.saveInProgress"
+        class="py-3">
+        <h4>Saving...</h4>
+
+        <div class="relative w-full h-3 bg-gray-200 rounded-full">
+            <div
+                class="h-full text-xs text-center text-white transition-all duration-500 ease-in-out bg-blue-500 rounded-full"
+                [style.width.%]="(savingStatus.done / savingStatus.all) * 100"></div>
+            <span
+                class="absolute text-xs dark:text-white text-black"
+                style="left: 50%; top: 100%"
+                >{{ savingStatus.doneInPercentage }}%</span
+            >
+        </div>
+    </div>
+    <button
+        (click)="startSave()"
+        class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+        Start Save
+    </button>
+</div>
